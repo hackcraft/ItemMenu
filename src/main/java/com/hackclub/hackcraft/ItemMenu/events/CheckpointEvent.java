@@ -1,4 +1,4 @@
-package com.hackclub.hackcraft.parkour.events;
+package com.hackclub.hackcraft.itemMenu.events;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;

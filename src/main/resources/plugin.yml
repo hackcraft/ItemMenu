@@ -1,9 +1,4 @@
-name: Parkour
-main: com.hackclub.hackcraft.parkour.ParkourPlugin
+name: ItemMenus
+main: com.hackclub.hackcraft.ItemMenus.ItemMenusPlugin
 version: 1.0
 api-version: 1.15
-commands:
-  pkadmin:
-    description: Parkour Administration
-    usage: /<command>
-    permission: op
