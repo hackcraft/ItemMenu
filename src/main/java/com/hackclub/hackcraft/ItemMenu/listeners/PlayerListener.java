@@ -1,5 +1,6 @@
 package com.hackclub.hackcraft.ItemMenu.listeners;
 
+import java.util.logging.Level;
 import com.hackclub.hackcraft.ItemMenu.ItemMenuPlugin;
 import com.hackclub.hackcraft.ItemMenu.events.ItemActionEvent;
 import org.bukkit.Bukkit;
@@ -11,18 +12,28 @@ public class PlayerListener implements Listener {
 
     private ItemMenuPlugin pl;
 
-    public PlayerListener(ItemMenuPlugin pl) {
-        this.pl = pl;
+    public PlayerListener(ItemMenuPlugin itemMenuPlugin) {
+        this.pl = itemMenuPlugin;
     }
 
     @EventHandler
     public void onPlayerInteract(final PlayerInteractEvent event) {
-        System.out.println(event.getAction());
-
         if (event.getItem() != null) {
-            ItemActionEvent iae = new ItemActionEvent(event.getPlayer(), event.getItem());
-            Bukkit.getServer().getPluginManager().callEvent(iae);
+            System.out.println(event.getAction());
+            pl.getLogger().log(Level.INFO, event.getAction().toString());
+            ItemActionEvent event2 = new ItemActionEvent(event.getPlayer(), event.getItem());
+            try {
+                Bukkit.getServer().getPluginManager().callEvent(event2);
+
+            } catch (NullPointerException e) {
+                pl.getLogger().log(Level.SEVERE, e.toString(), e.getCause());
+                e.printStackTrace();
+            }
         }
+        return;
+
+
+
     }
 
 }

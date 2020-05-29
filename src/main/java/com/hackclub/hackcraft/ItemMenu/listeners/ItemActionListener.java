@@ -15,7 +15,8 @@ public class ItemActionListener implements Listener {
 
     @EventHandler
     public void onItemAction(final ItemActionEvent event) {
-
+        System.out.println(
+                event.getPlayer() + "used" + event.getItem().getItemMeta().getDisplayName());
     }
 
 }
