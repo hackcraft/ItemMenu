@@ -28,5 +28,9 @@ public class ItemActionEvent extends Event {
         return handlers;
     }
 
+    public HandlerList getHandlers() {
+        return handlers;
+    }
+
 
 }
