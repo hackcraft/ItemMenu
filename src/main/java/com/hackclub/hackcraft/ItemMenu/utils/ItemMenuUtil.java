@@ -68,6 +68,7 @@ public class ItemMenuUtil {
 
     public void giveItemMenu(Player player, String id) {
         ArrayList<ItemStack> itemList = FromID(id).get().getItemArray();
+        player.getInventory().clear();
 
         for (int i = 0; i < itemList.size(); i++) {
             player.getInventory().setItem(i, itemList.get(i));
