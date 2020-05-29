@@ -1,20 +1,67 @@
 package com.hackclub.hackcraft.ItemMenu.commands;
 
-import com.hackclub.hackcraft.ItemMenu.ItemMenusPlugin;
+import java.util.Optional;
+import com.hackclub.hackcraft.ItemMenu.ItemMenuPlugin;
+import com.hackclub.hackcraft.ItemMenu.objects.ItemMenu;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import net.md_5.bungee.api.ChatColor;
 
 public class ItemMenuCommand implements CommandExecutor {
 
-    private ItemMenusPlugin plugin;
+    private ItemMenuPlugin plugin;
 
-    public ItemMenuCommand(ItemMenusPlugin plugin) {
+    public ItemMenuCommand(ItemMenuPlugin plugin) {
         this.plugin = plugin;
     }
 
     public boolean onCommand(CommandSender commandSender, Command command, String label,
             String[] args) {
+
+        Player sender = (Player) commandSender;
+        Player player;
+        Optional<ItemMenu> im;
+        ItemMenu im2;
+
+
+        switch (args[0].toLowerCase()) {
+            case "give":
+                if (args.length == 3) {
+                    player = sender.getServer().getPlayerExact(args[1]);
+                    player.getInventory().clear();
+                    plugin.ItemMenuUtil.giveItemMenu(player, args[2]);
+                    return true;
+                }
+
+            case "new":
+
+                im2 = new ItemMenu(args[1], args[2]);
+                if (plugin.ItemMenuUtil.saveItemMenu(im2)) {
+                    sender.sendMessage(ChatColor.GREEN + "Item menu successfully created!");
+                    plugin.ItemMenuUtil.loadItemMenus();
+                    return true;
+                }
+            case "add":
+                im = plugin.ItemMenuUtil.FromID(args[1]);
+                if (!im.isPresent()) {
+                    sender.sendMessage(ChatColor.RED + "That item menu doesn't exist!");
+                    return true;
+                }
+                im2 = im.get();
+                ItemStack item = sender.getInventory().getItemInMainHand();
+                int slot = sender.getInventory().getHeldItemSlot();
+                im2.setItem(item, slot);
+                if (plugin.ItemMenuUtil.saveItemMenu(im2)) {
+                    sender.sendMessage(ChatColor.GREEN + "Item successfully added!");
+                    plugin.ItemMenuUtil.loadItemMenus();
+                    return true;
+                }
+        }
+
+        return false;
 
 
     }
