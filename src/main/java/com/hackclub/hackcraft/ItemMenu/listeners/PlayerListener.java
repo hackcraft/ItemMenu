@@ -1,8 +1,10 @@
 package com.hackclub.hackcraft.ItemMenu.listeners;
 
 import java.util.logging.Level;
+
 import com.hackclub.hackcraft.ItemMenu.ItemMenuPlugin;
 import com.hackclub.hackcraft.ItemMenu.events.ItemActionEvent;
+
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -12,8 +14,8 @@ public class PlayerListener implements Listener {
 
     private ItemMenuPlugin pl;
 
-    public PlayerListener(ItemMenuPlugin itemMenuPlugin) {
-        this.pl = itemMenuPlugin;
+    public PlayerListener(ItemMenuPlugin ItemMenuPlugin) {
+        this.pl = ItemMenuPlugin;
     }
 
     @EventHandler
@@ -31,9 +33,5 @@ public class PlayerListener implements Listener {
             }
         }
         return;
-
-
-
     }
-
 }
