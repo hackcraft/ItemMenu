@@ -1,5 +1,5 @@
 package com.hackclub.hackcraft.ItemMenu;
-t
+
 import com.hackclub.hackcraft.ItemMenu.commands.ItemMenuCommand;
 import com.hackclub.hackcraft.ItemMenu.listeners.ItemActionListener;
 import com.hackclub.hackcraft.ItemMenu.listeners.PlayerListener;
@@ -11,7 +11,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class ItemMenuPlugin extends JavaPlugin {
 
-  public ItemMenuUtil ItemMenuUtil;
+  public static ItemMenuUtil ItemMenuUtil;
 
   @Override
   public void onEnable() {
