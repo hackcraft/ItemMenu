@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.hackclub.hackcraft</groupId>
-    <artifactId>ItemMenu</artifactId>
+    <artifactId>ItemMenu/dev</artifactId>
     <version>1.0-DEV</version>
     <build>
         <plugins>
@@ -39,7 +39,7 @@
         <repository>
             <id>github</id>
             <name>GitHub hackcraft Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/hackcraft/ItemMenu</url>
+            <url>https://maven.pkg.github.com/hackcraft/ItemMenu/dev</url>
         </repository>
     </distributionManagement>
 
