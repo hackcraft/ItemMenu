@@ -3,12 +3,10 @@ name: Maven Package
 
 on:
   release:
-    branches:
-      - master
+    types: [created]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
