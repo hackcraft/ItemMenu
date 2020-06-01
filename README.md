@@ -10,3 +10,7 @@
 
 
 `/menu add <menu id>` adds the item you are currently holding to the item menu. if there is already an item in that slot it replaces it
+
+
+## Contributing 
+This repo uses the [Google Java Style](https://google.github.io/styleguide/javaguide.html). 
