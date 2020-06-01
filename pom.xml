@@ -5,9 +5,21 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.hackclub.hackcraft</groupId>
-    <artifactId>ItemMenu</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>ItemMenu-dev</artifactId>
+    <version>1.0.1</version>
+    <packaging>jar</packaging>
+    <name>ItemMenu-DEV</name>
     <build>
+        <finalName>${project.name}-${project.version}</finalName>
+        <resources>
+            <resource>
+                <filtering>true</filtering>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>plugin.yml</include>
+                </includes>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -30,7 +42,7 @@
     <distributionManagement>
         <repository>
             <id>github</id>
-            <name>GitHub hackcraft Apache Maven Packages</name>
+            <name>hackcraft Maven Package</name>
             <url>https://maven.pkg.github.com/hackcraft/ItemMenu</url>
         </repository>
     </distributionManagement>
