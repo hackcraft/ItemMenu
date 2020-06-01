@@ -36,7 +36,7 @@ public class ItemMenuPlugin extends JavaPlugin {
     getLogger().info("ItemMenu deactivated!");
   }
 
-  public ItemMenuUtil getMenuUtil() {
+  public static ItemMenuUtil getMenuUtil() {
     return ItemMenuUtil;
   }
 }
