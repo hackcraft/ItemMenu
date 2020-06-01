@@ -7,16 +7,18 @@ import org.bukkit.event.Listener;
 
 public class ItemActionListener implements Listener {
 
-    private ItemMenuPlugin pl;
+  private ItemMenuPlugin pl;
 
-    public ItemActionListener(ItemMenuPlugin pl) {
-        this.pl = pl;
-    }
+  public ItemActionListener(ItemMenuPlugin pl) {
+    this.pl = pl;
+  }
 
-    @EventHandler
-    public void onItemAction(final ItemActionEvent event) {
-        System.out.println(
-                event.getPlayer() + "used" + event.getItem().getItemMeta().getDisplayName());
-    }
-
+  @EventHandler
+  public void onItemAction(final ItemActionEvent event) {
+    System.out.println(
+        event.getPlayer() +
+            "used" +
+            event.getItem().getItemMeta().getDisplayName()
+    );
+  }
 }

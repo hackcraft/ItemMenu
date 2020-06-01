@@ -5,7 +5,6 @@ import com.hackclub.hackcraft.ItemMenu.listeners.ItemActionListener;
 import com.hackclub.hackcraft.ItemMenu.listeners.PlayerListener;
 import com.hackclub.hackcraft.ItemMenu.objects.ItemMenu;
 import com.hackclub.hackcraft.ItemMenu.utils.ItemMenuUtil;
-
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.plugin.java.JavaPlugin;
 
